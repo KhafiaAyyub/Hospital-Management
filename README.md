@@ -1,5 +1,6 @@
 # Spring Data JPA 
 
+
 ## Overview
 Spring Data JPA is a powerful abstraction over JPA (Java Persistence API) and Hibernate, making database access easier by removing boilerplate code.  
 It provides repository interfaces for CRUD, pagination, sorting, and custom queries.
