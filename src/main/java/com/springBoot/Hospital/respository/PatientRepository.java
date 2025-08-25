@@ -6,4 +6,6 @@ import com.springBoot.Hospital.Entity.Patient;
 
 public interface PatientRepository extends JpaRepository<Patient, Long> {
 
+	Patient findByName(String name);
+
 }

@@ -1,5 +1,6 @@
 package com.springBoot.Hospital;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -26,12 +27,20 @@ public class PatientTests {
 	}
 	
 	
+//	@Test
+//	public void testTransactionMethods() {
+//		Patient patient =  patientService.getPatientById(1L);
+//		System.out.println(patient);
+//	}
+//	
 	@Test
 	public void testTransactionMethods() {
-		Patient patient =  patientService.getPatientById(1L);
-		System.out.println(patient);
+
+//	Patient patient = patientRepository.findByName("John Doe");
+	
+		List<Patient> patientList = patientRepository.findByBirthDateOrEmail(LocalDate.of(1990,8,27), "john@example.com"));
+		
+	System.out.println(patient);
 	}
-	
-	
 	
 }
