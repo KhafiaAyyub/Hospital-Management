@@ -6,6 +6,8 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 import com.springBoot.Hospital.Entity.Patient;
 import com.springBoot.Hospital.Entity.Type.BloodGroupType;
@@ -75,23 +77,31 @@ public class PatientTests {
 
 
 		//group by query
-//		List<Object[]> bloodGroupList = patientRepository.countEachBloodGroupType();
-//
-//		for (Object[] objects : bloodGroupList) {
-//			System.out.println(objects[0] + " "+ objects[1]);
-//		}
-		
+		//		List<Object[]> bloodGroupList = patientRepository.countEachBloodGroupType();
+		//
+		//		for (Object[] objects : bloodGroupList) {
+		//			System.out.println(objects[0] + " "+ objects[1]);
+		//		}
+
 		//native query - find All Patient
-//		List<Patient> patientList = patientRepository.findAllPatients();
-//		
-//		for (Patient patient : patientList) {
-//			System.out.println(patient);
-//		}
+		//		List<Patient> patientList = patientRepository.findAllPatients();
+		//		
+		//		for (Patient patient : patientList) {
+		//			System.out.println(patient);
+		//		}
 
 		//update query
+		//		int rowsUpdated = patientRepository.updateNameWithId("RUNNN", 1L);
+		//		System.out.println(rowsUpdated);
 		
-		int rowsUpdated = patientRepository.updateNameWithId("RUNNN", 1L);
-		System.out.println(rowsUpdated);
+		//Pagination
+		
+		Page<Patient> patientList = patientRepository.findAllPatient(PageRequest.of(1, 2));		
+		for (Patient patient : patientList) {
+			System.out.println(patient);
+		}
+		
+		
 	}
 
 }
