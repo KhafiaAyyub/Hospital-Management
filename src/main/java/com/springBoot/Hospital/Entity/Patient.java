@@ -60,5 +60,5 @@ public class Patient {
 	private LocalDateTime createdAt;
 	
 	@Enumerated(EnumType.STRING)
-	private BloodGroupType bloodgroup;
+	private BloodGroupType bloodGroup;
 }
